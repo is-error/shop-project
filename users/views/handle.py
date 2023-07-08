@@ -3,7 +3,7 @@ from drf_yasg.utils import swagger_auto_schema
 
 from utils.response import Response
 from utils.common import serializer_errors_response, exceptions_errors
-from ..serializers.handle import LoginSerializer
+from users.serializers.handle import LoginSerializer
 
 # docs swaggers
 import users.swaggers as swaggers

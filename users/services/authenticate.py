@@ -1,7 +1,7 @@
 from django.contrib.auth.backends import BaseBackend
 from rest_framework import exceptions
 
-from ..models.user import User
+from users.models.user import User
 
 
 class Mybackend(BaseBackend):

@@ -2,8 +2,8 @@ from rest_framework_simplejwt.serializers import TokenObtainSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.db import transaction
 
-from ..models import User, LoginHistory
-from ..services.authenticate import Mybackend
+from users.models import User, LoginHistory
+from users.services.authenticate import Mybackend
 
 from ip2geotools.databases.noncommercial import DbIpCity
 import requests

@@ -4,7 +4,7 @@ from drf_yasg.utils import swagger_auto_schema
 from utils.response import Response
 from utils.common import exceptions_errors
 from utils.pagination import CustomPagination
-from ..serializers.views import LoginHistory, LoginHistorySerializer
+from users.serializers.views import LoginHistory, LoginHistorySerializer
 
 
 class LoginHistoriesAPI(APIView):

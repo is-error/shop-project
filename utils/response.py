@@ -1,5 +1,5 @@
 from rest_framework.views import status, Response as views_response
-from .status import get_status_name
+from utils.status import get_status_name
 
 
 class Response(views_response):

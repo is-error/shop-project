@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import LoginHistory
+from users.models import LoginHistory
 
 
 class LoginHistorySerializer(serializers.ModelSerializer):

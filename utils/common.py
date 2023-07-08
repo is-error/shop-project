@@ -1,6 +1,6 @@
 from rest_framework import exceptions
 from rest_framework.views import status
-from .response import Response
+from utils.response import Response
 
 
 def serializer_errors_response(serializer):

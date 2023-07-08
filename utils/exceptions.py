@@ -1,5 +1,5 @@
 from rest_framework.views import exception_handler, status
-from .status import get_status_name
+from utils.status import get_status_name
 
 
 def ExceptionHandler(exc, context):

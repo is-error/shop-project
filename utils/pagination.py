@@ -1,5 +1,4 @@
 from rest_framework.pagination import PageNumberPagination
-from .response import Response
 
 
 class CustomPagination(PageNumberPagination):
