@@ -6,6 +6,7 @@ from users.models import User, LoginHistory
 from users.services.authenticate import Mybackend
 
 from ip2geotools.databases.noncommercial import DbIpCity
+from django.conf import settings
 import requests
 
 
@@ -50,7 +51,14 @@ class CustomTokenObtainSerializer(TokenObtainSerializer):
 class LoginSerializer(CustomTokenObtainSerializer):
     @classmethod
     def get_token(cls, user):
-        return RefreshToken.for_user(user)
+        token = RefreshToken()
+        token[settings.SIMPLE_JWT['USER_ID_CLAIM']] = getattr(user, settings.SIMPLE_JWT['USER_ID_FIELD'])
+        token['fullname'] = getattr(user, 'fullname')
+        token['user_code'] = getattr(user, 'user_code')
+        token['last_name'] = getattr(user, 'last_name')
+        token['first_name'] = getattr(user, 'first_name')
+        token['is_superuser'] = getattr(user, 'is_superuser')
+        return token
 
     def validate(self, attrs):
         return super().validate(attrs)
